@@ -1,0 +1,51 @@
+# ===== Python / Backend =====
+backend/venv/
+backend/.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.coverage
+.coverage
+htmlcov/
+
+# ===== Environment files (keep .env.example, ignore real .env) =====
+.env
+backend/.env
+frontend/.env
+
+# ===== Runtime data (generated at runtime, not source) =====
+data/bidfactory.db
+data/company_profile.json
+data/knowledge_base/*/
+data/rfp_uploads/
+data/exports/
+# Keep the README placeholders
+!data/knowledge_base/README.md
+!data/README.md
+
+# ===== Frontend =====
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ===== OS / Editor =====
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.iml
+
+# ===== Docker =====
+*.log
