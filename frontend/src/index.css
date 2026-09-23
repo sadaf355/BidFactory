@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --paper:#F5F2EA;
+  --paper-deep:#EAE5D8;
+  --ink:#20262C;
+  --ink-soft:#5B6570;
+  --rule:#D8D2C0;
+  --navy-deep:#16232C;
+  --navy:#1F3A47;
+  --teal:#6FCBB5;
+  --stamp-pass:#2F6B4A;
+  --stamp-partial:#A6752C;
+  --stamp-missing:#A6392C;
+  --stamp-edited:#2B4C6B;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'IBM Plex Sans',Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+.shell{display:flex;min-height:100vh}
+
+/* ---------- Sidebar: styled as a case-file index ---------- */
+aside{
+  width:252px;background:var(--navy-deep);color:#E7E2D4;
+  padding:26px 0 20px;position:sticky;top:0;height:100vh;
+  display:flex;flex-direction:column;
+  border-right:1px solid rgba(255,255,255,.06);
+}
+aside h1{
+  margin:0 22px 2px;font-family:'Source Serif 4',serif;font-weight:700;
+  font-size:25px;letter-spacing:.2px;color:#fff;
+}
+aside small{
+  display:block;margin:0 22px;color:#93A5AF;font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+}
+.workflow-badge{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;background:rgba(111,203,181,.14);color:#8FE0CE;
+  border:1px solid rgba(143,224,206,.35);padding:6px 10px;border-radius:2px;
+  margin:18px 22px 4px;display:inline-block;
+}
+aside nav,aside .navlist{margin-top:14px;display:flex;flex-direction:column;gap:1px;padding:0 12px}
+aside button{
+  display:flex;align-items:center;gap:11px;width:100%;padding:10px 10px;
+  text-align:left;border:0;background:transparent;color:#C3CDD3;cursor:pointer;
+  border-radius:3px;font-size:13.5px;font-family:'IBM Plex Sans',sans-serif;
+}
+aside button .tab-index{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#5E7078;min-width:16px;
+}
+aside button:hover{background:rgba(255,255,255,.05)}
+aside button.active{background:rgba(111,203,181,.10);color:#fff;box-shadow:inset 3px 0 0 var(--teal)}
+aside button.active .tab-index{color:var(--teal)}
+
+/* ---------- Main content ---------- */
+main{flex:1;padding:38px 46px 60px;max-width:1360px}
+
+.topbar{
+  display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;
+  margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--rule);
+}
+.topbar .eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+.topbar .case-ref{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);
+}
+
+h2{margin:0 0 4px;font-family:'Source Serif 4',serif;font-weight:600;font-size:27px;color:var(--navy-deep)}
+h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:17.5px;margin:0 0 10px;color:var(--navy-deep)}
+h4{font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin:16px 0 8px}
+
+.message{
+  background:#EAF1E5;border:1px solid #C6D8BE;color:#33502C;
+  padding:12px 16px;border-radius:2px;margin-bottom:20px;font-size:13.5px;
+}
+
+.cards{display:grid;grid-template-columns:repeat(4,minmax(140px,1fr));gap:14px}
+.card,.panel{
+  background:#FCFBF7;border:1px solid var(--rule);border-radius:3px;padding:20px;
+  margin:14px 0;box-shadow:0 1px 2px rgba(30,20,10,.03);
+}
+.card small{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--ink-soft);
+}
+.card strong{
+  display:block;font-family:'Source Serif 4',serif;font-weight:600;
+  font-size:33px;margin-top:9px;color:var(--navy-deep);
+}
+
+textarea{
+  width:100%;min-height:230px;padding:14px;border:1px solid var(--rule);border-radius:2px;
+  font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.65;background:#FCFBF8;
+  color:var(--ink);
+}
+input[type=file],.search{padding:10px;margin:8px 0;max-width:100%;font-family:'IBM Plex Sans',sans-serif}
+.search{width:65%;border:1px solid var(--rule);border-radius:2px;background:#fff}
+
+button{
+  padding:9px 14px;border-radius:2px;border:1px solid var(--rule);background:#fff;
+  margin:5px 5px 5px 0;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;
+  font-size:13.5px;color:var(--ink);transition:border-color .12s;
+}
+button:hover{border-color:var(--navy)}
+.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+.primary:hover{background:var(--navy-deep)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--teal);outline-offset:1px}
+
+table{width:100%;border-collapse:collapse;background:#FCFBF7;margin:15px 0;border:1px solid var(--rule)}
+th{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--ink-soft);background:var(--paper-deep);
+}
+th,td{padding:13px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top;font-size:13.5px}
+.evidence{padding:6px 0;border-bottom:1px dashed var(--rule)}
+.evidence b{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft)}
+
+.answer-source{
+  display:inline-block;margin-top:6px;font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);
+}
+
+/* ---------- Signature element: compliance stamps ---------- */
+/* Bare status classes: plain colored text (used inside dense table cells,
+   where a rotated box would clip and hurt legibility). */
+.PASS,.APPROVED,.WIN{color:var(--stamp-pass);font-weight:600}
+.PARTIAL,.PENDING{color:var(--stamp-partial);font-weight:600}
+.MISSING,.REJECTED,.LOSS{color:var(--stamp-missing);font-weight:600}
+.EDITED{color:var(--stamp-edited);font-weight:600}
+
+/* .status wrapper adds the actual stamp treatment for standalone badges
+   (Human Review queue, Bid Memory outcomes) — a nod to the compliance
+   "stamp of approval/denial" this whole product is built around. */
+.status{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:600;
+  font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 11px;border-radius:2px;border:1.5px solid currentColor;
+  transform:rotate(-2deg);background:rgba(255,255,255,.5);
+}
+
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.flow span{padding:8px 12px;background:var(--paper-deep);border-radius:2px;border:1px solid var(--rule)}
+.flow b{color:var(--ink-soft)}
+.score{float:right;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft)}
+.exports{margin-top:12px}
+
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(22,35,44,.55);
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:40px 20px;overflow-y:auto;z-index:50;
+}
+.modal-panel{
+  background:var(--paper);border:1px solid var(--rule);border-radius:4px;
+  max-width:720px;width:100%;padding:28px 32px;position:relative;
+  box-shadow:0 8px 30px rgba(0,0,0,.25);
+}
+.modal-close{position:absolute;top:18px;right:18px}
+
+@media(max-width:850px){
+  .shell{display:block}
+  aside{position:static;width:100%;height:auto}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  main{padding:20px}
+  table{font-size:13px}
+  .search{width:100%}
+}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important}
+}

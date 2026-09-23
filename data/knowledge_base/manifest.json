@@ -1,0 +1,14 @@
+{
+  "company": "NovaTech Solutions",
+  "purpose": "Synthetic knowledge base for Bid Factory academic demonstration",
+  "document_count": 18,
+  "categories": {
+    "certifications": 2,
+    "security_policies": 3,
+    "technical_docs": 3,
+    "case_studies": 4,
+    "previous_proposals": 2,
+    "support_policies": 2,
+    "pricing": 2
+  }
+}
